@@ -10,7 +10,7 @@ const PROMPT = require('readline-sync');
 
 const PIN = 1492;
 const CARD_NUMBER =1234567890123456;
-const CARD_HOLDER_NAME = 'Jacob Taylor';
+const CARD_HOLDER_NAME = 'Howard Bates';
 const MAX_TRIES = 3;
 
 let checkingBalance = 1000, savingsBalance = 1000, pick = 0;
@@ -71,13 +71,13 @@ function setWithdrawMoney() {
     withdrawChoice = PROMPT.question(`\n\tWould you like to withdraw funds from your checking account(press 1) or savings account(press 2)?`);
     if (withdrawChoice == 1) {
         console.log(`\nchecking Balance = \$${checkingBalance}`);
-        withdrawMoney = PROMPT.question(`How much money would you like to withdraw?`);
+        withdrawMoney = Number(PROMPT.question(`How much money would you like to withdraw?`));
         checkingBalance = checkingBalance - withdrawMoney;
         console.log(`New checking balance is \$${checkingBalance}`);
         setWhichTask();
     } else {
         console.log(`\nSavings = \$${savingsBalance}`);
-        withdrawMoney = PROMPT.question(`How much money would you like to withdraw?`);
+        withdrawMoney = Number(PROMPT.question(`How much money would you like to withdraw?`));
         savingsBalance = savingsBalance - withdrawMoney;
         console.log(`New savings balance is \$${savingsBalance}`);
         setWhichTask();
@@ -89,13 +89,13 @@ function setDepositMoney() {
     depositChoice = PROMPT.question(`\n\tWould you like to deposit funds into your checking account(press 1) or savings account(press 2)?`);
     if (depositChoice == 1) {
         console.log(`\nChecking Balance = \$${checkingBalance}`);
-        depositMoney = PROMPT.question(`How much money would you like to deposit?`);
+        depositMoney = Number(PROMPT.question(`How much money would you like to deposit?`));
         checkingBalance = checkingBalance + depositMoney;
         console.log(`New checking balance is \$${checkingBalance}`);
         setWhichTask();
     } else {
         console.log(`\nSavings = \$${savingsBalance}`);
-        depositMoney = PROMPT.question(`How much money would you like to deposit?`);
+        depositMoney = Number(PROMPT.question(`How much money would you like to deposit?`));
         savingsBalance = savingsBalance + depositMoney;
         console.log(`New savings balance is \$${savingsBalance}`);
         setWhichTask();
@@ -111,7 +111,7 @@ function setTransferFunds() {
         console.log(`\nChecking Balance = \$${checkingBalance}`);
         console.log(`\nSavings Balance = \$${savingsBalance}`);
         let transferAmount;
-        transferAmount = PROMPT.question(`How much money would you like to transfer?`);
+        transferAmount = Number(PROMPT.question(`How much money would you like to transfer?`));
         checkingBalance = checkingBalance - transferAmount;
         savingsBalance = savingsBalance + transferAmount;
         console.log(`New checking balance is \$${checkingBalance}`);
@@ -121,7 +121,7 @@ function setTransferFunds() {
         console.log(`\nSavings balance = \$${savingsBalance}`);
         console.log(`\nChecking balance = \$${checkingBalance}`);
         let transferAmount;
-        transferAmount = PROMPT.question(`How much money would you like to transfer?`);
+        transferAmount = Number(PROMPT.question(`How much money would you like to transfer?`));
         savingsBalance = savingsBalance - transferAmount;
         checkingBalance = checkingBalance + transferAmount;
         console.log(`New savings balance is \$${savingsBalance}`);
@@ -136,6 +136,5 @@ function setInquireMoney() {
 }
 
 function printGoodbye() {
-    console.log(`Thank you for your business, ${cardHolderName}`)
+    console.log(`Thank you for your business.`)
 }
-
