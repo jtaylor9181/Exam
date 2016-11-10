@@ -56,7 +56,7 @@ function setAccountPin() {
         counter++
     }
     if (accountPin !== PIN) {
-        console.log(`\nPIN is not correct, please don't b a thief dude.`);
+        console.log(`\nPIN is not correct, please try again.`);
         return main();
     } else if (accountPin == PIN) {
     }
@@ -71,13 +71,13 @@ function setWithdrawMoney() {
     withdrawChoice = PROMPT.question(`\n\tWould you like to withdraw funds from your checking account(press 1) or savings account(press 2)?`);
     if (withdrawChoice == 1) {
         console.log(`\nchecking Balance = \$${checkingBalance}`);
-        withdrawMoney = PROMPT.question(`how much do u wanna withdraw???`);
+        withdrawMoney = PROMPT.question(`How much money would you like to withdraw???`);
         checkingBalance = checkingBalance - withdrawMoney;
         console.log(`New checking balance is \$${checkingBalance}`);
         setWhichTask();
     } else {
         console.log(`\nSavings = \$${savingsBalance}`);
-        withdrawMoney = PROMPT.question(`How much would you like to withdraw?`);
+        withdrawMoney = PROMPT.question(`How much money would you like to withdraw?`);
         savingsBalance = savingsBalance - withdrawMoney;
         console.log(`New savings balance is \$${savingsBalance}`);
         setWhichTask();
