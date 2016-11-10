@@ -71,7 +71,7 @@ function setWithdrawMoney() {
     withdrawChoice = PROMPT.question(`\n\tWould you like to withdraw funds from your checking account(press 1) or savings account(press 2)?`);
     if (withdrawChoice == 1) {
         console.log(`\nchecking Balance = \$${checkingBalance}`);
-        withdrawMoney = PROMPT.question(`How much money would you like to withdraw???`);
+        withdrawMoney = PROMPT.question(`How much money would you like to withdraw?`);
         checkingBalance = checkingBalance - withdrawMoney;
         console.log(`New checking balance is \$${checkingBalance}`);
         setWhichTask();
